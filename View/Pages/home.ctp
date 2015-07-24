@@ -46,6 +46,18 @@
         </div>
     </div>
     <div class="col-md-6">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-reorder"></i> <?php echo __("Stats Qte par famille"); ?>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                
+            </div>
+        </div>
+    </div>
+<!--    <div class="col-md-6">
         <div class="portlet box green">
             <div class="portlet-title">
                 <div class="caption">
@@ -53,7 +65,7 @@
                 </div>
             </div>
             <div class="portlet-body form">
-                <!-- this is the FlexPie directive -->
+                 this is the FlexPie directive 
                 <wj-flex-pie
                     items-source="itemsSource"
                     binding="value"
@@ -61,7 +73,7 @@
                 </wj-flex-pie>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
 <?php //echo $this->Html->script('jquery-2.0.0.min', array('inline' => false)); ?>
 <?php echo $this->Html->script('angular.min', array('inline' => false)); ?>

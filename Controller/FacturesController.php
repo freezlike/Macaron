@@ -10,28 +10,30 @@ class FacturesController extends AppController {
     public function beforeFilter() {
         parent::beforeFilter();
     }
-	public function declaration($first_date = null,$last_date = null) {
-        //if ($this->request->is('post')):
-		$this->Ffacture->recursive = 1;
-		$factures = $this->Ffacture->find('all', array(
-			//'conditions' => array("Ffacture.date BETWEEN '$first_date' AND DATE_ADD('$first_date', INTERVAL 30 DAY)"),
-			'conditions' => array("Ffacture.date BETWEEN '$first_date' AND '$last_date'"),
-			'order' => array('Ffacture.date ASC')
-		));
-		
-		$clients = $this->Ffacture->find('count', array(
-			//'conditions' => array("Ffacture.date BETWEEN '$first_date' AND DATE_ADD('$first_date', INTERVAL 30 DAY)",'Ffacture.is_client'=>1),
-			'conditions' => array("Ffacture.date BETWEEN '$first_date' AND '$last_date'",'Ffacture.is_client'=>1),
-			'order' => array('Ffacture.date ASC')
-		));
-		$journaux = $this->Ffacture->find('count', array(
-			//'conditions' => array("Ffacture.date BETWEEN '$first_date' AND DATE_ADD('$first_date', INTERVAL 30 DAY)",'Ffacture.is_client'=>0),
-			'conditions' => array("Ffacture.date BETWEEN '$first_date' AND '$last_date'",'Ffacture.is_client'=>0),
-			'order' => array('Ffacture.date ASC')
-		));
 
-		$this->set(compact('factures','clients','journaux'));
+    public function declaration($first_date = null, $last_date = null) {
+        //if ($this->request->is('post')):
+        $this->Ffacture->recursive = 1;
+        $factures = $this->Ffacture->find('all', array(
+            //'conditions' => array("Ffacture.date BETWEEN '$first_date' AND DATE_ADD('$first_date', INTERVAL 30 DAY)"),
+            'conditions' => array("Ffacture.date BETWEEN '$first_date' AND '$last_date'"),
+            'order' => array('Ffacture.date ASC')
+        ));
+
+        $clients = $this->Ffacture->find('count', array(
+            //'conditions' => array("Ffacture.date BETWEEN '$first_date' AND DATE_ADD('$first_date', INTERVAL 30 DAY)",'Ffacture.is_client'=>1),
+            'conditions' => array("Ffacture.date BETWEEN '$first_date' AND '$last_date'", 'Ffacture.is_client' => 1),
+            'order' => array('Ffacture.date ASC')
+        ));
+        $journaux = $this->Ffacture->find('count', array(
+            //'conditions' => array("Ffacture.date BETWEEN '$first_date' AND DATE_ADD('$first_date', INTERVAL 30 DAY)",'Ffacture.is_client'=>0),
+            'conditions' => array("Ffacture.date BETWEEN '$first_date' AND '$last_date'", 'Ffacture.is_client' => 0),
+            'order' => array('Ffacture.date ASC')
+        ));
+
+        $this->set(compact('factures', 'clients', 'journaux'));
     }
+
     public function add() {
         if ($this->checkMacaron() == false) {
             $this->destroy();
@@ -47,26 +49,26 @@ class FacturesController extends AppController {
             }
             //debug($productQte);
             //$qtepass = array();
-            /*foreach ($productQte as $k => $pqte) {
-                foreach ($pqte as $k => $qte) {
-                    $stock = $this->Stock->find('first', array(
-                        'conditions' => array('Stock.product_id' => $k)
-                    ));
-                    echo ($stock['Stock']['qte'] > $qte) ? $this->Qtepass = true : $this->Qtepass = false;
-                    if ($this->Qtepass == false) {
-                        //$this->Session->setFlash(__("La Quantité du produit (" . $stock['Product']['name'] . ") ne répond à la quantité demandé via la facture..."), 'notif', array('type' => 'error'));
-                        $data = array(
-                            'id' => null,
-                            'name' => 'Commande : ' . $stock['Product']['name'],
-                            'content' => __("Stock manquant pour le produit ") . $stock['Product']['name'] . __(" avant facture avec une quantité demandée de ") . $qte,
-                            'type' => 'commande'
-                        );
-                        //debug($data);
-                        $this->Notification->save($data);
-                    }
-                    array_push($qtepass, $this->Qtepass);
-                }
-            }*/
+            /* foreach ($productQte as $k => $pqte) {
+              foreach ($pqte as $k => $qte) {
+              $stock = $this->Stock->find('first', array(
+              'conditions' => array('Stock.product_id' => $k)
+              ));
+              echo ($stock['Stock']['qte'] > $qte) ? $this->Qtepass = true : $this->Qtepass = false;
+              if ($this->Qtepass == false) {
+              //$this->Session->setFlash(__("La Quantité du produit (" . $stock['Product']['name'] . ") ne répond à la quantité demandé via la facture..."), 'notif', array('type' => 'error'));
+              $data = array(
+              'id' => null,
+              'name' => 'Commande : ' . $stock['Product']['name'],
+              'content' => __("Stock manquant pour le produit ") . $stock['Product']['name'] . __(" avant facture avec une quantité demandée de ") . $qte,
+              'type' => 'commande'
+              );
+              //debug($data);
+              $this->Notification->save($data);
+              }
+              array_push($qtepass, $this->Qtepass);
+              }
+              } */
             //if (in_array(false, $qtepass)) {
             if (1 < 0) {
                 $this->Session->setFlash(__("Valider votre stock avant de passer cette facture"), 'notif', array('type' => 'error'));
@@ -80,9 +82,9 @@ class FacturesController extends AppController {
                     unset($this->request->data['Facture']['remise']);
                     //$count = $this->Ffacture->find('count');
                     //$this->request->data['Facture']['code_facture'] = "CF-" . ($count + 1);
-					$this->request->data['Facture']['avoir'] = 0;
-					//$this->request->data['Facture']['date'] = date("Y-m-d H:i:s");
-					$this->request->data['Facture']['limit_date'] = $this->request->data['Facture']['date'];
+                    $this->request->data['Facture']['avoir'] = 0;
+                    //$this->request->data['Facture']['date'] = date("Y-m-d H:i:s");
+                    $this->request->data['Facture']['limit_date'] = $this->request->data['Facture']['date'];
                     $datas['Products'] = array();
                     foreach ($products as $k => $p) {
                         $row = array();
@@ -101,10 +103,10 @@ class FacturesController extends AppController {
                         $last_id = $this->Ffacture->getLastInsertID();
                         foreach ($datas as $product) {
                             foreach ($product as $value) {
-								$this->Product->id = $value['product_id'];
-								$prd = $this->Product->field('price');
-								//$last_unit_price = ($prd / 1.18);
-                                $data = array('id' => NULL, 'ffacture_id' => $last_id, 'product_id' => $value['product_id'], 'last_unit_price'=>$prd ,'qte' => $value['qte'], 'remise' => $value['remise']);
+                                $this->Product->id = $value['product_id'];
+                                $prd = $this->Product->field('price');
+                                //$last_unit_price = ($prd / 1.18);
+                                $data = array('id' => NULL, 'ffacture_id' => $last_id, 'product_id' => $value['product_id'], 'last_unit_price' => $prd, 'qte' => $value['qte'], 'remise' => $value['remise']);
                                 $this->FfactureProduct->save($data);
                             }
                         }
@@ -175,8 +177,8 @@ class FacturesController extends AppController {
     public function next($last_fc = null) {
         $this->Facture->id = $last_fc;
         $facture = $this->Facture->read();
-		debug($factures);
-		die();
+        debug($factures);
+        die();
         //$facture['Facture']['date'] = $facture['Facture']['created'];
         //$finalF = $this->Ffacture->find('count');
         //$facture['Facture']['code_facture'] = "CF-" . ($finalF + 1);
@@ -184,16 +186,16 @@ class FacturesController extends AppController {
         //unset($facture['Facture']['id']);
         unset($facture['Facture']['created']);
 
-        if($this->Ffacture->save($facture['Facture'])){
-			$last_id = $this->Ffacture->getLastInsertID();			
-			//debug($last_id);
-			foreach ($facture['Product'] as $v) {
-				$data = array('id' => NULL, 'ffacture_id' => $last_id, 'product_id' => $v['id'], 'last_unit_price' => $v['price'], 'qte' => $v['FacturesProduct']['qte'], 'remise' => $v['FacturesProduct']['remise']);
-				$this->FfactureProduct->save($data);
-			}
-			$this->Session->setFlash(__('Facture achevée avec succès'), 'notif');
-			$this->redirect(array('controller' => 'factures', 'action' => 'index'));
-		}
+        if ($this->Ffacture->save($facture['Facture'])) {
+            $last_id = $this->Ffacture->getLastInsertID();
+            //debug($last_id);
+            foreach ($facture['Product'] as $v) {
+                $data = array('id' => NULL, 'ffacture_id' => $last_id, 'product_id' => $v['id'], 'last_unit_price' => $v['price'], 'qte' => $v['FacturesProduct']['qte'], 'remise' => $v['FacturesProduct']['remise']);
+                $this->FfactureProduct->save($data);
+            }
+            $this->Session->setFlash(__('Facture achevée avec succès'), 'notif');
+            $this->redirect(array('controller' => 'factures', 'action' => 'index'));
+        }
     }
 
     public function journa($date = null) {
@@ -254,11 +256,10 @@ class FacturesController extends AppController {
                     $data = array('id' => NULL, 'ffacture_id' => $lid, 'product_id' => $value['product_id'], 'last_unit_price' => $value['price'], 'qte' => $value['qte'], 'remise' => $value['remise']);
                     $this->FfactureProduct->save($data);
                 }
-				$this->Facture->query("TRUNCATE factures");
-				$this->Facture->query("TRUNCATE factures_products");
+                $this->Facture->query("TRUNCATE factures");
+                $this->Facture->query("TRUNCATE factures_products");
                 $this->Session->setFlash(__("Facture Journalière du $now a été générée avec succès."), "notif");
                 $this->redirect(array('controller' => 'factures', 'action' => 'index'));
-				
             }
         }
     }
@@ -315,10 +316,12 @@ class FacturesController extends AppController {
             }
         }
     }
-    public function aze($id = null){
+
+    public function aze($id = null) {
         
     }
-    public function pdf($id = null){
+
+    public function pdf($id = null) {
         $this->Ffacture->recursive = 2;
         if ($this->checkMacaron() == false) {
             $this->destroy();
