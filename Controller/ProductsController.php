@@ -33,7 +33,7 @@ class ProductsController extends AppController {
         //Reverse for ORDER DESC
         $topVentes = array_reverse($topVentes);
         foreach ($topVentes as $k => $tp):
-            if($k > 99){
+            if ($k > 99) {
                 unset($topVentes[$k]);
             }
         endforeach;
