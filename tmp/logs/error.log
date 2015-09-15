@@ -8906,3 +8906,118 @@ Stack Trace:
 #10 C:\wampNew\www\macaron\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
 #11 C:\wampNew\www\macaron\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2015-07-24 18:00:58 Error: [Exception] DateInterval::__construct(): Unknown or bad format (1M)
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\app\Controller\PagesController.php(33): DateInterval->__construct('1M')
+#1 [internal function]: PagesController->home()
+#2 C:\wampNew\www\macaron\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#3 C:\wampNew\www\macaron\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\wampNew\www\macaron\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#5 C:\wampNew\www\macaron\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-07-24 18:06:15 Error: Fatal Error (1): Call to a member function format() on a non-object in [C:\wampNew\www\macaron\app\Controller\PagesController.php, line 33]
+2015-07-24 18:06:15 Error: [FatalErrorException] Call to a member function format() on a non-object
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 33)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 33, Array)
+#2 C:\wampNew\www\macaron\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 33, Array)
+#3 C:\wampNew\www\macaron\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-24 18:06:24 Error: Fatal Error (1): Call to a member function format() on a non-object in [C:\wampNew\www\macaron\app\Controller\PagesController.php, line 33]
+2015-07-24 18:06:24 Error: [FatalErrorException] Call to a member function format() on a non-object
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 33)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 33, Array)
+#2 C:\wampNew\www\macaron\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 33, Array)
+#3 C:\wampNew\www\macaron\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-24 18:07:31 Error: [Exception] DateInterval::__construct(): Unknown or bad format (P1MHIS)
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\app\Controller\PagesController.php(31): DateInterval->__construct('P1MHIS')
+#1 [internal function]: PagesController->home()
+#2 C:\wampNew\www\macaron\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#3 C:\wampNew\www\macaron\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\wampNew\www\macaron\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#5 C:\wampNew\www\macaron\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-07-24 18:07:34 Error: Fatal Error (1): Call to a member function format() on a non-object in [C:\wampNew\www\macaron\app\Controller\PagesController.php, line 33]
+2015-07-24 18:07:35 Error: [FatalErrorException] Call to a member function format() on a non-object
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 33)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 33, Array)
+#2 C:\wampNew\www\macaron\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\wampNew\\www\\...', 33, Array)
+#3 C:\wampNew\www\macaron\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-24 18:57:39 Error: [Exception] DateInterval::__construct(): Unknown or bad format (PY1T10H30S)
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\app\Controller\PagesController.php(35): DateInterval->__construct('PY1T10H30S')
+#1 [internal function]: PagesController->home()
+#2 C:\wampNew\www\macaron\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#3 C:\wampNew\www\macaron\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#4 C:\wampNew\www\macaron\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#5 C:\wampNew\www\macaron\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-07-26 16:56:05 Error: Fatal Error (1): Call to undefined method PagesController::best_product() in [C:\wampNew\www\macaron\app\Controller\PagesController.php, line 17]
+2015-07-26 16:56:05 Error: [FatalErrorException] Call to undefined method PagesController::best_product()
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\\wampNew\\www\\...', 17)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\\wampNew\\www\\...', 17, Array)
+#2 C:\wampNew\www\macaron\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\\wampNew\\www\\...', 17, Array)
+#3 C:\wampNew\www\macaron\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-26 16:56:49 Error: Fatal Error (1): Class 'ProductsController' not found in [C:\wampNew\www\macaron\app\Controller\PagesController.php, line 16]
+2015-07-26 16:56:49 Error: [FatalErrorException] Class 'ProductsController' not found
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Products...', 'C:\\wampNew\\www\\...', 16)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Products...', 'C:\\wampNew\\www\\...', 16, Array)
+#2 C:\wampNew\www\macaron\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'Products...', 'C:\\wampNew\\www\\...', 16, Array)
+#3 C:\wampNew\www\macaron\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-26 16:56:56 Error: Fatal Error (1): Class 'ProductsController' not found in [C:\wampNew\www\macaron\app\Controller\PagesController.php, line 16]
+2015-07-26 16:56:56 Error: [FatalErrorException] Class 'ProductsController' not found
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Class 'Products...', 'C:\\wampNew\\www\\...', 16)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Products...', 'C:\\wampNew\\www\\...', 16, Array)
+#2 C:\wampNew\www\macaron\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'Products...', 'C:\\wampNew\\www\\...', 16, Array)
+#3 C:\wampNew\www\macaron\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-07-28 04:38:43 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+',
+  'enabled' => true,
+)
+Request URL: /macaron/
+Stack Trace:
+#0 C:\wampNew\www\macaron\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\wampNew\www\macaron\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\wampNew\www\macaron\lib\Cake\Model\Model.php(3524): ConnectionManager::getDataSource('default')
+#3 C:\wampNew\www\macaron\lib\Cake\Model\Model.php(1136): Model->setDataSource('default')
+#4 C:\wampNew\www\macaron\lib\Cake\Model\Model.php(3551): Model->setSource('notifications')
+#5 C:\wampNew\www\macaron\lib\Cake\Model\Model.php(2947): Model->getDataSource()
+#6 C:\wampNew\www\macaron\lib\Cake\Model\Model.php(2919): Model->_readDataSource('all', Array)
+#7 C:\wampNew\www\macaron\app\Controller\AppController.php(17): Model->find('all', Array)
+#8 C:\wampNew\www\macaron\app\Controller\PagesController.php(10): AppController->beforeFilter()
+#9 [internal function]: PagesController->beforeFilter(Object(CakeEvent))
+#10 C:\wampNew\www\macaron\lib\Cake\Event\CakeEventManager.php(242): call_user_func(Array, Object(CakeEvent))
+#11 C:\wampNew\www\macaron\lib\Cake\Controller\Controller.php(674): CakeEventManager->dispatch(Object(CakeEvent))
+#12 C:\wampNew\www\macaron\lib\Cake\Routing\Dispatcher.php(187): Controller->startupProcess()
+#13 C:\wampNew\www\macaron\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#14 C:\wampNew\www\macaron\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}

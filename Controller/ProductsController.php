@@ -16,16 +16,14 @@ class ProductsController extends AppController {
         }
         //ini_set("memory_limit","2048M");
         ini_set('memory_limit', '-1');
+        $topVentes = array();
         $products = $this->Product->find('all', array(
             'fields' => array('Product.id', 'Product.name', 'Product.price')
         ));
-        $topVentes = array();
         foreach ($products as $product):
-            $count = $this->FfactureProduct->find('count', array(
-                'conditions' => array('FfactureProduct.product_id' => $product['Product']['id'])
-            ));
+            $count = $this->FfactureProduct->find('count', array('conditions' => array('FfactureProduct.product_id' => $product['Product']['id'])));
             if ($count > 0) {
-                array_push($topVentes, array('count' => $count, 'name' => $product['Product']['name'], 'price' => number_format(($product['Product']['price'] * $count), 3, '.', '.')));
+                array_push($topVentes, array('id' => $product['Product']['id'], 'count' => $count, 'name' => $product['Product']['name'], 'price' => number_format(($product['Product']['price'] * $count), 3, '.', '.')));
             }
         endforeach;
         //Sort Top Ventes
